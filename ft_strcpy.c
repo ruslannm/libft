@@ -6,11 +6,11 @@
 /*   By: rgero <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 16:28:00 by rgero             #+#    #+#             */
-/*   Updated: 2019/09/10 16:30:32 by rgero            ###   ########.fr       */
+/*   Updated: 2019/09/10 17:36:01 by rgero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strcpy(char *dst, const char *src)
+char	*ft_strcpy(char *dst, const char *src)
 {
 	int	i;
 

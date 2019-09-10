@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgero <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/09 19:12:16 by rgero             #+#    #+#             */
-/*   Updated: 2019/09/10 17:35:42 by rgero            ###   ########.fr       */
+/*   Created: 2019/09/10 18:32:38 by rgero             #+#    #+#             */
+/*   Updated: 2019/09/10 18:36:44 by rgero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
-size_t	ft_strlen(const char *s)
+char	*ft_strcat(char *restrict s1, const char *restrict s2)
 {
-	unsigned char	*s_tmp;
-	size_t			len;
+	int	i;
+	int	j;
 
-	len = 0;
-	s_tmp = (unsigned char *)s;
-	while (s_tmp[len] != '\0')
-		len++;
-	return (len++);
+	i = 0;
+	while (s1[i] != '\0')
+		i++;
+	j = 0;
+	while (s2[j] != '\0')
+	{
+		s1[i + j] = s2[j];
+		j++;
+	}
+	s1[i + j] = '\0';
+	return (s1);
 }
