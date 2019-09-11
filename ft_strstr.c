@@ -1,25 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgero <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/09 19:12:16 by rgero             #+#    #+#             */
-/*   Updated: 2019/09/11 15:30:26 by rgero            ###   ########.fr       */
+/*   Created: 2019/09/11 15:23:17 by rgero             #+#    #+#             */
+/*   Updated: 2019/09/11 15:53:09 by rgero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_strstr(const char *haystack, const char *needle)
 {
-	unsigned char	*s_tmp;
-	size_t			len;
+	char	*h_tmp;
+	char	*n_tmp;
+	size_t	i;
+	size_t	j;
 
-	len = 0;
-	s_tmp = (unsigned char *)s;
-	while (s_tmp[len] != '\0')
-		len++;
-	return (len++);
+	h_tmp = (char *)haystack;
+	n_tmp = (char *)needle;
+	if (!*n_tmp)
+		return (&h_tmp[0]);
+	i = 0;
+	while (h_tmp[i] != '\0')
+	{
+		j = 0;
+		while (h_tmp[i + j] == n_tmp[j])
+		{
+			j++;
+			if (n_tmp[j] == '\0')
+				return (&h_tmp[i]);
+		}
+		i++;
+	}
+	return (NULL);
 }
