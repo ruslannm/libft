@@ -6,7 +6,7 @@
 /*   By: rgero <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/08 16:57:15 by rgero             #+#    #+#             */
-/*   Updated: 2019/09/10 19:14:05 by rgero            ###   ########.fr       */
+/*   Updated: 2019/09/11 14:38:19 by rgero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@ char    *ft_strncpy(char * dst, const char * src, size_t len);
 char    *ft_strcat(char *restrict s1, const char *restrict s2);
 char    *ft_strncat(char *restrict s1, const char *restrict s2, size_t n);
 size_t  ft_strlcat(char * restrict dst, const char * restrict src, size_t size);
+char    *ft_strchr(const char *s, int c);
 
 #endif
