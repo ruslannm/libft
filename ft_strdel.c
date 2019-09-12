@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgero <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/08 14:24:35 by rgero             #+#    #+#             */
-/*   Updated: 2019/09/12 15:19:30 by rgero            ###   ########.fr       */
+/*   Created: 2019/09/12 15:49:11 by rgero             #+#    #+#             */
+/*   Updated: 2019/09/12 15:51:16 by rgero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	ft_strdel(char **as)
 {
-	unsigned char	*dst_tmp;
-	unsigned char	*src_tmp;
-	size_t			i;
-
-	i = 0;
-	dst_tmp = (unsigned char *)dst;
-	src_tmp = (unsigned char *)src;
-	while (i < n)
+	if (*as)
 	{
-		dst_tmp[i] = src_tmp[i];
-		i++;
+		free(*as);
+		*as = NULL;
 	}
-	return (dst);
 }

@@ -6,7 +6,7 @@
 /*   By: rgero <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/08 16:57:15 by rgero             #+#    #+#             */
-/*   Updated: 2019/09/11 19:40:18 by rgero            ###   ########.fr       */
+/*   Updated: 2019/09/12 16:09:23 by rgero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,11 @@ int		ft_toupper(int c);
 int		ft_tolower(int c);
 
 void	*ft_memalloc(size_t size);
+void    ft_memdel(void **ap);
+char    *ft_strnew(size_t size);
+void    ft_strdel(char **as);
+void    ft_strclr(char *s);
+void    ft_striter(char *s,void(*f)(char*));
+void    ft_striteri(char *s,void (*f)(unsignedint, char *));
 
 #endif
