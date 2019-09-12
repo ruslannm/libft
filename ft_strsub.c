@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgero <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/12 16:39:20 by rgero             #+#    #+#             */
-/*   Updated: 2019/09/12 17:09:36 by rgero            ###   ########.fr       */
+/*   Created: 2019/09/12 17:30:28 by rgero             #+#    #+#             */
+/*   Updated: 2019/09/12 17:46:03 by rgero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	char	*tmp;
 	char	*ret;
-	size_t	len;
+	char	*tmp;
 	size_t	i;
+	size_t	j;
 
-	tmp = (char *)s;
-	len = ft_strlen(tmp);
-	if (!(ret = (char *)malloc(sizeof(char) * (len + 1))))
+	if (!(ret = (char *)malloc(sizeof(char) * (len - start + 1))))
 		return (NULL);
+	tmp = s;
 	i = 0;
+	j = (size_t)start;
 	while (i < len)
-	{
-		ret[i] = f((unsigned int)i, tmp[i]);
-		i++;
-	}
+		ret[i++] = tmp[j++];
 	ret[i] = '\0';
 	return (ret);
 }

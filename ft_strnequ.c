@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgero <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/12 16:39:20 by rgero             #+#    #+#             */
-/*   Updated: 2019/09/12 17:09:36 by rgero            ###   ########.fr       */
+/*   Created: 2019/09/12 17:13:54 by rgero             #+#    #+#             */
+/*   Updated: 2019/09/12 17:16:36 by rgero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+int	ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	char	*tmp;
-	char	*ret;
-	size_t	len;
+	char	*s1_tmp;
+	char	*s2_tmp;
 	size_t	i;
 
-	tmp = (char *)s;
-	len = ft_strlen(tmp);
-	if (!(ret = (char *)malloc(sizeof(char) * (len + 1))))
-		return (NULL);
+	s1_tmp = (char *)s1;
+	s2_tmp = (char *)s2;
 	i = 0;
-	while (i < len)
+	while (i < n && s1_tmp[i] != '\0' && s2_tmp[i] != '\0' \
+			&& s1_tmp[i] == s2_tmp[i])
 	{
-		ret[i] = f((unsigned int)i, tmp[i]);
 		i++;
 	}
-	ret[i] = '\0';
-	return (ret);
+	if (s1_tmp[i] == s2_tmp[i])
+		return (1);
+	return (0);
 }

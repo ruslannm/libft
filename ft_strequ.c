@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgero <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/12 16:39:20 by rgero             #+#    #+#             */
-/*   Updated: 2019/09/12 17:09:36 by rgero            ###   ########.fr       */
+/*   Created: 2019/09/12 17:10:28 by rgero             #+#    #+#             */
+/*   Updated: 2019/09/12 17:13:09 by rgero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft.h"
-
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+int	ft_strequ(char const *s1, char const *s2)
 {
-	char	*tmp;
-	char	*ret;
-	size_t	len;
-	size_t	i;
+	char *s1_tmp;
+	char *s2_tmp;
 
-	tmp = (char *)s;
-	len = ft_strlen(tmp);
-	if (!(ret = (char *)malloc(sizeof(char) * (len + 1))))
-		return (NULL);
-	i = 0;
-	while (i < len)
+	s1_tmp = (char *)s1;
+	s2_tmp = (char *)s2;
+	while (*s1_tmp != '\0' && *s2_tmp != '\0' && *s1_tmp == *s2_tmp)
 	{
-		ret[i] = f((unsigned int)i, tmp[i]);
-		i++;
+		s1_tmp++;
+		s2_tmp++;
 	}
-	ret[i] = '\0';
-	return (ret);
+	if (*s1_tmp == *s2_tmp)
+		return (1);
+	return (0);
 }
