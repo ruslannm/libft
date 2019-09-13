@@ -6,7 +6,7 @@
 /*   By: ggerardy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 17:25:22 by ggerardy          #+#    #+#             */
-/*   Updated: 2019/09/12 15:25:25 by rgero            ###   ########.fr       */
+/*   Updated: 2019/09/13 16:45:11 by rgero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -4509,7 +4509,7 @@ int test_all()
 	ft_strdup_test();
 	ft_strcpy_test();
 	ft_strncpy_test();
-	ft_strlcpy_test();
+/*	ft_strlcpy_test();*/
 	ft_strcat_test();
 	ft_strncat_test();
 	ft_strlcat_test();
@@ -4528,30 +4528,30 @@ int test_all()
 	ft_toupper_test();
 	ft_tolower_test();
 
-/*	ft_memalloc_test();*/
-/*	ft_memdel_test();*/
-/*	ft_strnew_test();*/
-/*	ft_strdel_test();*/
-/*	ft_strclr_test();*/
-/*	ft_striter_test();*/
-/*	ft_striteri_test();*/
-/*	ft_strmap_test();*/
-/*	ft_strmapi_test();*/
-/*	ft_strequ_test();*/
-/*	ft_strnequ_test();*/
-/*	ft_strsub_test();*/
-/*	ft_strjoin_test();*/
-/*	ft_strtrim_test();*/
-/*	ft_strsplit_test();*/
-/*	ft_itoa_test();*/
-/*	ft_putchar_test();*/
-/*	ft_putstr_test();*/
-/*	ft_putendl_test();*/
-/*	ft_putnbr_test();*/
-/*	ft_putchar_fd_test();*/
-/*	ft_putstr_fd_test();*/
-/*	ft_putendl_fd_test();*/
-/*	ft_putnbr_fd_test();*/
+	ft_memalloc_test();
+	ft_memdel_test();
+	ft_strnew_test();
+	ft_strdel_test();
+	ft_strclr_test();
+	ft_striter_test();
+	ft_striteri_test();
+	ft_strmap_test();
+	ft_strmapi_test();
+	ft_strequ_test();
+	ft_strnequ_test();
+	ft_strsub_test();
+	ft_strjoin_test();
+	ft_strtrim_test();
+	ft_strsplit_test();
+	ft_itoa_test();
+	ft_putchar_test();
+	ft_putstr_test();
+	ft_putendl_test();
+	ft_putnbr_test();
+	ft_putchar_fd_test();
+	ft_putstr_fd_test();
+	ft_putendl_fd_test();
+	ft_putnbr_fd_test();
 
 	print_total();
 	return (total == success);

@@ -6,21 +6,16 @@
 /*   By: rgero <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/06 16:01:09 by rgero             #+#    #+#             */
-/*   Updated: 2019/09/11 17:04:01 by rgero            ###   ########.fr       */
+/*   Updated: 2019/09/13 18:11:17 by rgero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strcmp(const char *s1, const char *s2)
 {
-	char *s1_tmp;
-	char *s2_tmp;
-
-	s1_tmp = (char *)s1;
-	s2_tmp = (char *)s2;
-	while (*s1_tmp != '\0' && *s2_tmp != '\0' && *s1_tmp == *s2_tmp)
+	while (*s1 != '\0' && *s2 != '\0' && *s1 == *s2)
 	{
-		s1_tmp++;
-		s2_tmp++;
+		s1++;
+		s2++;
 	}
-	return (*s1_tmp - *s2_tmp);
+	return (*((unsigned char *)s1)  - *((unsigned char *)s2));
 }
