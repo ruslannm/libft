@@ -6,7 +6,7 @@
 /*   By: rgero <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/13 15:23:49 by rgero             #+#    #+#             */
-/*   Updated: 2019/09/13 15:25:25 by rgero            ###   ########.fr       */
+/*   Updated: 2019/09/13 16:08:12 by rgero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	ft_putstr_fd(char const *s, int fd)
 	int i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (s[i] != '\0')
 	{
-		ft_putchar_fd(str[i], fd);
+		ft_putchar_fd(s[i], fd);
 		i++;
 	}
 }
