@@ -6,7 +6,7 @@
 /*   By: rgero <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/08 16:57:15 by rgero             #+#    #+#             */
-/*   Updated: 2019/09/12 19:14:27 by rgero            ###   ########.fr       */
+/*   Updated: 2019/09/13 15:40:46 by rgero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,6 @@
 # define LIBFT_H
 
 # include <string.h>
-
-void	ft_putchar(char c);
-void    ft_putstr(char *str);
-void	ft_putnbr(int n);
 
 void    *ft_memset(void *b, int c, size_t len);
 void    ft_bzero(void *s, size_t n);
@@ -64,5 +60,15 @@ char    *ft_strsub(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char    *ft_strtrim(char const *s);
 char    **ft_strsplit(char const *s, char c);
+char    *ft_itoa(int n);
+
+void    ft_putchar(char c);
+void    ft_putstr(char const *str);
+void    ft_putendl(char const *s);
+void    ft_putnbr(int n);
+void    ft_putchar_fd(char c, int fd);
+void    ft_putstr_fd(char const *s, int fd);
+void    ft_putendl_fd(char const *s, int fd);
+void    ft_putnbr_fd(int n, int fd);
 
 #endif

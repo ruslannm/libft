@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putendl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgero <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/08 16:49:52 by rgero             #+#    #+#             */
-/*   Updated: 2019/09/13 15:15:36 by rgero            ###   ########.fr       */
+/*   Created: 2019/09/13 15:17:28 by rgero             #+#    #+#             */
+/*   Updated: 2019/09/13 15:20:01 by rgero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "libft.h"
 
-void	ft_putstr(char const *str)
+void	ft_putendl(char const *s)
 {
-	int i;
-
-	i = 0;
-	while (str[i] != '\0')
+	if (*s)
 	{
-		ft_putchar(str[i]);
-		i++;
+		ft_putstr(s);
+		ft_putchar('\n');
 	}
 }
