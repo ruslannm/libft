@@ -6,11 +6,12 @@
 /*   By: rgero <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/12 17:46:48 by rgero             #+#    #+#             */
-/*   Updated: 2019/09/12 17:58:24 by rgero            ###   ########.fr       */
+/*   Updated: 2019/09/13 16:36:41 by rgero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
 char *ft_strjoin(char const *s1, char const *s2)
 {

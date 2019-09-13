@@ -6,12 +6,12 @@
 /*   By: rgero <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/13 14:11:22 by rgero             #+#    #+#             */
-/*   Updated: 2019/09/13 15:07:37 by rgero            ###   ########.fr       */
+/*   Updated: 2019/09/13 16:34:26 by rgero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#inclide "libft.h"
+#include "libft.h"
 
 static size_t	ft_nbrlen(int n)
 {
