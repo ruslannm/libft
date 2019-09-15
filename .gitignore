@@ -1,2 +1,4 @@
+./*.o
 /test/
 ./gitignore
+/42_libft_test_system/

@@ -6,34 +6,35 @@
 /*   By: rgero <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 17:29:52 by rgero             #+#    #+#             */
-/*   Updated: 2019/09/11 18:26:29 by rgero            ###   ########.fr       */
+/*   Updated: 2019/09/14 17:13:58 by rgero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_atoi(const char *str)
 {
-	char	*s;
-	int		i;
-	int		sign;
-	int		ret;
+	int			i;
+	int			sign;
+	long long	ret;
+	long long	test;
 
-	s = (char *)str;
 	ret = 0;
 	sign = 1;
 	i = 0;
-	while (s[i] == '\t' || s[i] == '\v' || s[i] == '\r' || s[i] == '\f'
-			|| s[i] == '\n' || s[i] == ' ')
+	while ((str[i] > 8 && str[i] < 14) || str[i] == 32)
 		i++;
-	if (s[i] == '+' || s[i] == '-')
+	if (str[i] == '+' || str[i] == '-')
 	{
-		if (s[i] == '-')
+		if (str[i] == '-')
 			sign = -1;
 		i++;
 	}
-	while (s[i] > 47 && s[i] < 58)
+	while (str[i] > 47 && str[i] < 58)
 	{
+		test = ret;
 		ret *= 10;
 		ret += str[i++] - 48;
+		if (test > ret / 10)
+			return (sign == -1 ? 0 : -1);
 	}
 	return (sign * ret);
 }
