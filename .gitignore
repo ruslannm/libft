@@ -1,4 +1,5 @@
 ./*.o
-/test/
+./test/
 ./gitignore
-/42_libft_test_system/
+./42_libft_test_system/
+./main.c

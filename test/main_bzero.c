@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   main_bzero.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgero <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/12 16:39:20 by rgero             #+#    #+#             */
-/*   Updated: 2019/09/15 18:17:17 by rgero            ###   ########.fr       */
+/*   Created: 2019/09/08 14:04:12 by rgero             #+#    #+#             */
+/*   Updated: 2019/09/08 14:14:50 by rgero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft.h"
+#include <stdio.h>
+#include <string.h>
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void *ft_bzero(void *b, size_t n);
+
+int main (void)
 {
-	char	*tmp;
-	char	*ret;
-	size_t	len;
-	size_t	i;
-
-	if (!s || !f)
-		return (NULL);
-	tmp = (char *)s;
-	len = ft_strlen(tmp);
-	if (!(ret = (char *)malloc(sizeof(char) * (len + 1))))
-		return (NULL);
-	i = 0;
-	while (i < len)
-	{
-		ret[i] = f((unsigned int)i, tmp[i]);
-		i++;
-	}
-	ret[i] = '\0';
-	return (ret);
+	unsigned char src[15]="1234567890";
+    unsigned char src2[15]="1234567890";
+	bzero(src, 10);
+	printf("lib c src:%s-\n",src);
+	ft_bzero(src2, 10);
+    printf ("my lib c src:%s-\n",src2);
+	return (0);
 }

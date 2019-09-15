@@ -6,7 +6,7 @@
 /*   By: rgero <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/06 16:01:09 by rgero             #+#    #+#             */
-/*   Updated: 2019/09/13 18:11:17 by rgero            ###   ########.fr       */
+/*   Updated: 2019/09/15 18:16:33 by rgero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,5 @@ int	ft_strcmp(const char *s1, const char *s2)
 		s1++;
 		s2++;
 	}
-	return (*((unsigned char *)s1)  - *((unsigned char *)s2));
+	return (*((unsigned char *)s1) - *((unsigned char *)s2));
 }

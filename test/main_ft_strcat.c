@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   main_ft_strcat.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgero <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/12 16:39:20 by rgero             #+#    #+#             */
-/*   Updated: 2019/09/15 18:17:17 by rgero            ###   ########.fr       */
+/*   Created: 2019/09/10 18:37:55 by rgero             #+#    #+#             */
+/*   Updated: 2019/09/10 18:43:51 by rgero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <string.h>
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+int		main(void)
 {
-	char	*tmp;
-	char	*ret;
-	size_t	len;
-	size_t	i;
+	char s1[3][11] = {"0123","45678","99"};
+	char s2[3][11] = {"aaa","bbbb",""};
+    char s3[3][11] = {"aaa","bbbb",""};
+	int i;
 
-	if (!s || !f)
-		return (NULL);
-	tmp = (char *)s;
-	len = ft_strlen(tmp);
-	if (!(ret = (char *)malloc(sizeof(char) * (len + 1))))
-		return (NULL);
 	i = 0;
-	while (i < len)
+	while (i < 3)
 	{
-		ret[i] = f((unsigned int)i, tmp[i]);
+		ft_putstr("s1:");
+		ft_putstr((char *)s1[i]);
+	    ft_putstr("-\n");
+			ft_putstr(";lb strncpy:");
+			ft_putstr(strcat(s2[i], s1[i]));
+			ft_putstr(";my strncpy:");
+            ft_putstr(ft_strcat(s3[i], s1[i]));
+			ft_putstr(";\n");
 		i++;
 	}
-	ret[i] = '\0';
-	return (ret);
+	return 0;
 }

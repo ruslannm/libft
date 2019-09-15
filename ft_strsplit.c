@@ -6,7 +6,7 @@
 /*   By: rgero <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/12 19:11:36 by rgero             #+#    #+#             */
-/*   Updated: 2019/09/15 15:34:11 by rgero            ###   ########.fr       */
+/*   Updated: 2019/09/15 18:39:02 by rgero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,9 @@ static size_t	ft_strlenc(const char *s, char c)
 {
 	size_t	ret;
 
-	while (*s != '\0' && *s == c)
-		s++;
 	ret = 0;
-	while (!(*s == '\0' || *s == c))
-	{
+	while (!(s[ret] == '\0' || s[ret] == c))
 		ret++;
-		s++;
-	}
 	return (ret);
 }
 
@@ -46,10 +41,27 @@ static int		ft_count_words(const char *s, char c)
 	return (ret);
 }
 
+static char		*ft_word_add(char **ret, int i, size_t size_word, char const *s)
+{
+	char	*word;
+
+	if (!(word = (char *)malloc(sizeof(char) * (size_word + 1))))
+	{
+		while (i > 0)
+			free(ret[--i]);
+		free(ret);
+		return (NULL);
+	}
+	word = ft_strncpy(word, s, size_word);
+	word[size_word] = '\0';
+	return (word);
+}
+
 char			**ft_strsplit(char const *s, char c)
 {
 	char	**ret;
 	int		i;
+	int		j;
 	int		nbr_words;
 	size_t	size_word;
 
@@ -57,22 +69,18 @@ char			**ft_strsplit(char const *s, char c)
 		return (NULL);
 	i = 0;
 	nbr_words = ft_count_words(s, c);
-	if (!(ret = (char **)malloc(sizeof(char) * (nbr_words  + 1))))
+	if (!(ret = (char **)malloc(sizeof(char *) * (nbr_words + 1))))
 		return (NULL);
+	j = 0;
 	while (i < nbr_words)
 	{
-		while (*s == c)
-			s++;
-		size_word = ft_strlenc(s, c);
-		if (!(ret[i] = (char *)malloc(sizeof(char) * size_word)))
-		{
-			while (i > 0)
-				free(ret[--i]);
-			free(ret);
+		while (s[j] == c && s[j])
+			j++;
+		size_word = ft_strlenc(&s[j], c);
+		if (!(ret[i] = ft_word_add(ret, i, size_word, &s[j])))
 			return (NULL);
-		}
-		ft_strncpy(ret[i], s, size_word);
 		i++;
+		j += size_word;
 	}
 	ret[nbr_words] = NULL;
 	return (ret);

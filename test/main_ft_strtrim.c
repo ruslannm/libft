@@ -1,37 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   main_ft_strstr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgero <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/12 16:39:20 by rgero             #+#    #+#             */
-/*   Updated: 2019/09/15 18:17:17 by rgero            ###   ########.fr       */
+/*   Created: 2019/09/11 15:40:24 by rgero             #+#    #+#             */
+/*   Updated: 2019/09/15 12:33:23 by rgero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+int		main(void)
 {
-	char	*tmp;
-	char	*ret;
-	size_t	len;
-	size_t	i;
-
-	if (!s || !f)
-		return (NULL);
-	tmp = (char *)s;
-	len = ft_strlen(tmp);
-	if (!(ret = (char *)malloc(sizeof(char) * (len + 1))))
-		return (NULL);
-	i = 0;
-	while (i < len)
-	{
-		ret[i] = f((unsigned int)i, tmp[i]);
-		i++;
-	}
-	ret[i] = '\0';
-	return (ret);
+	    char *s1 = "  \t \t \n   \n\n\n\t";
+		ft_putstr("s1:");
+		ft_putstr(s1);
+	    ft_putstr("-\nNew=");
+		ft_putstr(ft_strtrim(s1));
+			ft_putstr("=New;\n");
+	return 0;
 }
