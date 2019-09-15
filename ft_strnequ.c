@@ -6,7 +6,7 @@
 /*   By: rgero <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/12 17:13:54 by rgero             #+#    #+#             */
-/*   Updated: 2019/09/12 17:16:36 by rgero            ###   ########.fr       */
+/*   Updated: 2019/09/15 14:51:10 by rgero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	ft_strnequ(char const *s1, char const *s2, size_t n)
 	char	*s2_tmp;
 	size_t	i;
 
+	if (!s1 || !s2)
+		return (0);
 	s1_tmp = (char *)s1;
 	s2_tmp = (char *)s2;
 	i = 0;

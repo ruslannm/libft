@@ -6,18 +6,16 @@
 /*   By: rgero <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/13 15:17:28 by rgero             #+#    #+#             */
-/*   Updated: 2019/09/13 15:20:01 by rgero            ###   ########.fr       */
+/*   Updated: 2019/09/15 15:14:42 by rgero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
 
 void	ft_putendl(char const *s)
 {
-	if (*s)
-	{
-		ft_putstr(s);
-		ft_putchar('\n');
-	}
+	if (!s)
+		return ;
+	ft_putstr(s);
+	ft_putchar('\n');
 }

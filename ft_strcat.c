@@ -6,11 +6,11 @@
 /*   By: rgero <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 18:32:38 by rgero             #+#    #+#             */
-/*   Updated: 2019/09/10 18:36:44 by rgero            ###   ########.fr       */
+/*   Updated: 2019/09/15 15:01:48 by rgero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *restrict s1, const char *restrict s2)
+char	*ft_strcat(char *s1, const char *s2)
 {
 	int	i;
 	int	j;

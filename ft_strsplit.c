@@ -6,7 +6,7 @@
 /*   By: rgero <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/12 19:11:36 by rgero             #+#    #+#             */
-/*   Updated: 2019/09/13 14:10:36 by rgero            ###   ########.fr       */
+/*   Updated: 2019/09/15 15:34:11 by rgero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,11 @@ char			**ft_strsplit(char const *s, char c)
 	int		nbr_words;
 	size_t	size_word;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	nbr_words = ft_count_words(s, c);
-	if (!(ret = (char **)malloc(sizeof(char) * nbr_words)))
+	if (!(ret = (char **)malloc(sizeof(char) * (nbr_words  + 1))))
 		return (NULL);
 	while (i < nbr_words)
 	{
@@ -72,5 +74,6 @@ char			**ft_strsplit(char const *s, char c)
 		ft_strncpy(ret[i], s, size_word);
 		i++;
 	}
+	ret[nbr_words] = NULL;
 	return (ret);
 }
