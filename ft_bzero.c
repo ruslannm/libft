@@ -6,17 +6,17 @@
 /*   By: rgero <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/08 13:59:45 by rgero             #+#    #+#             */
-/*   Updated: 2019/09/08 14:23:27 by rgero            ###   ########.fr       */
+/*   Updated: 2019/09/16 15:58:46 by rgero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
 	unsigned char *s_tmp;
 
-	s_tmp = s;
+	s_tmp = (unsigned char *)s;
 	while (n-- > 0)
 	{
 		*s_tmp = 0;

@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgero <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/12 16:22:20 by rgero             #+#    #+#             */
-/*   Updated: 2019/09/16 16:21:45 by rgero            ###   ########.fr       */
+/*   Created: 2019/09/16 17:09:26 by rgero             #+#    #+#             */
+/*   Updated: 2019/09/16 17:36:01 by rgero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strmap(char const *s, char (*f)(char))
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	char	*ret;
-	size_t	len;
-	size_t	i;
+	t_list *ret;
 
-	if (!s || !f)
+	if (!(ret = (t_list*)malloc(sizeof(t_list))))
 		return (NULL);
-	len = ft_strlen(s);
-	if (!(ret = (char *)malloc(sizeof(char) * (len + 1))))
-		return (NULL);
-	i = 0;
-	while (i < len)
+	if (!content)
 	{
-		ret[i] = f(s[i]);
-		i++;
+		ret->content = NULL;
+		ret->content_size = 0;
 	}
-	ret[i] = '\0';
+	else
+	{
+		if (!(ret->content = malloc(content_size)))
+		{
+			free(ret);
+			return (NULL);
+		}
+		ft_memcpy(ret->content, content, content_size);
+		ret->content_size = content_size;
+	}
+	ret->next = NULL;
 	return (ret);
 }
