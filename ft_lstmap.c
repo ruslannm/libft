@@ -1,39 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgero <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/16 17:09:26 by rgero             #+#    #+#             */
-/*   Updated: 2019/09/17 18:59:38 by rgero            ###   ########.fr       */
+/*   Created: 2019/09/17 18:05:05 by rgero             #+#    #+#             */
+/*   Updated: 2019/09/17 18:42:31 by rgero            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-t_list	*ft_lstnew(void const *content, size_t content_size)
+static void	ft_del(void *content, size_t len)
 {
-	t_list *ret;
+	ft_bzero(content, len);
+	free(content);
+}
 
-	if (!(ret = (t_list*)malloc(sizeof(t_list))))
+t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+{
+	t_list	*ret;
+	t_list	*tmp;
+	t_list	*nxt;
+
+	if (!(lst && f))
 		return (NULL);
-	if (!content)
+	tmp = f(lst);
+	if (!(nxt = ft_lstnew(tmp->content, tmp->content_size)))
+		return (NULL);
+	ret = nxt;
+	lst = lst->next;
+	while (lst)
 	{
-		ret->content = NULL;
-		ret->content_size = 0;
-	}
-	else
-	{
-		if (!(ret->content = malloc(sizeof(content) * content_size)))
+		tmp = f(lst);
+		if (!(nxt->next = ft_lstnew(tmp->content, tmp->content_size)))
 		{
-			free(ret);
+			ft_lstdel(&ret, ft_del);
 			return (NULL);
 		}
-		ft_memcpy(ret->content, content, content_size);
-		ret->content_size = content_size;
+		nxt = nxt->next;
+		lst = lst->next;
 	}
-	ret->next = NULL;
 	return (ret);
 }
