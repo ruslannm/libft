@@ -6,7 +6,7 @@
 #    By: rgero <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/13 15:46:56 by rgero             #+#    #+#              #
-#    Updated: 2019/09/18 17:30:05 by rgero            ###   ########.fr        #
+#    Updated: 2019/09/18 18:34:27 by rgero            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,8 +29,6 @@ SRC_NAME = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 	ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtrim.c ft_tolower.c \
 	ft_toupper.c ft_strsplit_tolst.c
 
-SRC = $(addprefix $(SRC_PATH), $(SRC_NAME))
-
 OBJ_PATH = ./
 OBJ_NAME = $(SRC_NAME:.c=.o)
 OBJ = $(addprefix $(OBJ_PATH), $(OBJ_NAME))
@@ -38,7 +36,7 @@ OBJ = $(addprefix $(OBJ_PATH), $(OBJ_NAME))
 INC_PATH = ./
 INC = $(addprefix -I, $(INC_PATH))
 
-.PHONY: all $(NAME) clean fclean re
+.PHONY: all clean fclean re
 
 all: $(NAME)
 
